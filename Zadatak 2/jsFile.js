@@ -1,5 +1,6 @@
-function MyFunction() {
+function MyFunction(operation) {
     var numberForCalculation = prompt("Insert number between 1 and 999", "1");
+
     if (numberForCalculation != null && isNaN(numberForCalculation)) {
         alert("This is not a number");
     }
@@ -9,29 +10,25 @@ function MyFunction() {
     }
 
     else if (numberForCalculation >= 1 && numberForCalculation <= 999) {
-        var sqrt = document.getElementById("sqrt");
-        var sin = document.getElementById("sin");
-        var cos = document.getElementById("cos");
-        var round = document.getElementById("round");
+        let result;
 
-        if (sqrt) {
-            var sqrtResult = parseFloat(Math.sqrt(numberForCalculation));
-            alert(sqrtResult);
-        }
-
-        else if (sin) {
-            var sinResult = parseFloat(Math.sin(numberForCalculation));
-            alert(sinResult);
-        }
-
-        else if (cos) {
-            var cosResult = parseFloat(Math.cos(numberForCalculation));
-            alert(cosResult);
-        }
-
-        else if (round) {
-            var roundResult = parseFloat(Math.round(numberForCalculation));
-            alert(roundResult);
+        switch (operation) {
+            case "button1":
+                result = parseFloat(Math.sqrt(numberForCalculation));
+                alert(result);
+                break;
+            case "button2":
+                result = parseFloat(Math.sin(numberForCalculation));
+                alert(result);
+                break;
+            case "button3":
+                result = parseFloat(Math.cos(numberForCalculation));
+                alert(result);
+                break;
+            default:
+                result = parseFloat(Math.round(numberForCalculation));
+                alert(result);
+                break;
         }
     }
 
